@@ -2,40 +2,40 @@
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
 
 namespace Business.Concrete
 {
     public class ColorManager : IColorService
     {
-        IColorDal _colordal;
+        IColorDal _colorDal;
         public ColorManager(IColorDal colordal)
         {
-            _colordal = colordal;
+            _colorDal = colordal;
         }
-        public IResult Add(Entities.Concrete.Color color)
+        public IResult Add(Color color)
         {
-            _colordal.Add(color);
+            _colorDal.Add(color);
             return new SuccessResult(Messages.RentalAdded);
         }
 
-        public IResult Delete(Entities.Concrete.Color color)
+        public IResult Delete(Color color)
         {
-            _colordal.Delete(color);
+            _colorDal.Delete(color);
             return new SuccessResult(Messages.ColorDeleted);
         }
 
-        public IDataResult<List<Entities.Concrete.Color>> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
-            return new SuccessDataResult<List<Entities.Concrete.Color>>(Messages.ColorsListed);
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(),Messages.ColorsListed);
         }
 
-        public IResult Update(Entities.Concrete.Color color)
+        public IResult Update(Color color)
         {
-            _colordal.Update(color);
+            _colorDal.Update(color);
             return new SuccessResult(Messages.RentalUpdated);
         }
     }
