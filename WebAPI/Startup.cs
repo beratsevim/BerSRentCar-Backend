@@ -1,4 +1,6 @@
-﻿using Core.Utilities.IoC;
+﻿using Core.DepedencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -26,11 +28,6 @@ namespace WebAPI
         {
             services.AddControllers();
             services.AddCors();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowOrigin",
-                    builder => builder.WithOrigins("http://localhost:3000"));
-            });
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -47,8 +44,11 @@ namespace WebAPI
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
-                });
-
+                }); 
+                
+            services.AddDependencyResolvers(new ICoreModule[] {
+                new CoreModule()
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
