@@ -1,7 +1,6 @@
 ﻿using Business.Concrete;
 using Core.DataAccess.EntityFramework;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
 
@@ -9,27 +8,37 @@ namespace ConsoleUI
 {
     public class Program
     {
+
+
         static void Main(string[] args)
         {
-            Car car1 = new Car() 
-            { 
+            Car car1 = new Car()
+            {
                 CarId = 6,
                 BrandId = 4,
                 CarName = "A5",
                 ColorId = 4,
                 DailyPrice = 370000,
                 Description = "Benzinli",
-                ModelYear = 2018 
+                ModelYear = 2018
             };
-            
+
             EfEntityRepositoryBase<Car, ReCapProjectContext> efEntityRepositoryBase = new EfEntityRepositoryBase<Car, ReCapProjectContext>();
             //efEntityRepositoryBase.Add(car1);
             //efEntityRepositoryBase.Delete(car1);
             //car1.CarName = "A8";
             //efEntityRepositoryBase.Update(car1);
             GetCarDetailTest();
-
-
+         //   CarImageManager carImageManager = new CarImageManager(new EfCarImageDal(), new FileHelper());
+            CarImage carImage = new CarImage()
+            {
+                CarId = 1,
+                Id = 1,
+                Datetime = DateTime.Now,
+                ImagePath = "C:\\Users\\berat\\source\\repos\\ReCapProject\\WebAPI\\wwwroot\\Images\\Default.png"
+            };
+            
+            //carImageManager.Add(Path.GetExtension(file.(carImage.ImagePath)), carImage);
         }
 
         private static void GetCarDetailTest()
@@ -55,6 +64,7 @@ namespace ConsoleUI
             {
                 Console.WriteLine(car.CarName);
             }
+
 
         }
             
