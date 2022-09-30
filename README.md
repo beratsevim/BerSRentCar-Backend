@@ -20,7 +20,7 @@ BerSRentCar is a car rental solution. This project includes an enterprise-grade 
    git clone https://github.com/beratsvm160/BerSRentCar-Backend.git
    ```
 2. Open the `BerSRentCar.sln` file with `Visual Studio`
-3. Open the `RentACarContext.cs` file in the `DataAccess.Concrete.EntityFramework` folder and enter your own database connection string
+3. Open the `ReCapProjectContext.cs` file in the `DataAccess.Concrete.EntityFramework` folder and enter your own database connection string
 4. Open `Package Manager Console` and run the following commands:
 
    ```sh
