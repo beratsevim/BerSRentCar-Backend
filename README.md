@@ -1,6 +1,6 @@
-# <p align="center">GoldenCar</p>
+# <p align="center">BerSRentCar</p>
 
-GoldenCar is a car rental solution. This project includes an enterprise-grade solution for building RESTful services using ASP.NET WebAPI and C#.
+BerSRentCar is a car rental solution. This project includes an enterprise-grade solution for building RESTful services using ASP.NET WebAPI and C#.
 
 ## Contents
 - [Getting Started](#getting-started)
