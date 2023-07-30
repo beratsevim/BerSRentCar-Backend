@@ -2,11 +2,13 @@
 
 BerSRentCar is a car rental solution. This project includes an enterprise-grade solution for building RESTful services using ASP.NET WebAPI and C#.
 
+
 ## Contents
 - [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Usage](#usage)
 - [Tech Stack](#tech-stack)
+- [Technologies, Frameworks and Best Practices](#technologies-frameworks-and-best-practices)
 - [Associated Project](#associated-project)
 - [Contributions](#contributions)
 
@@ -81,3 +83,16 @@ After running the Web API, you can make HTTP requests like:
 | Microsoft.EntityFrameworkCore.Configuration.Binder | 5.0.0 |
 | Microsoft.IdentityModel.Tokens | 6.8.0 |
 | Newtonsoft.Json | 10.0.1 |
+
+## Technologies, Frameworks and Best Practices
+- ASP.Net
+- OOP
+- SQL Server
+- N Layered Architecture (Entity, Data Access, Business, WebAPI, Core)
+- Design Patterns
+- Entity Framework
+- IoC
+- Autofac
+- FluentValidation (for building validation rules)
+- JWT (Authentication), Hashing and Salting
+
